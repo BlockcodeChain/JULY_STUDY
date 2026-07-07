@@ -16,10 +16,11 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(cors({
-    origin:"http//local"
+     origin: "http://localhost:5173", // Example for Vite
+  credentials: true
 }))
 app.use(express.urlencoded({extended:true}))
-app.listen(PORT,(req,res)=>{
+app.listen(PORT ,()=>{
     ConnectDB()
     console.log(`Server running at port ${PORT}`)
 })
